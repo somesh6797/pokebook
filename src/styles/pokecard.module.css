@@ -1,0 +1,132 @@
+:root{
+    --white:#fff;
+    --yellow:#ffd861;
+}
+
+
+.card_container{
+    display: flex;
+    background-color: var(--white);
+    height:250px;
+    width:200px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 35px;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-out;
+    position: relative;
+}
+
+.card_container:hover{
+    box-shadow: 0 20px 20px rgba(0,0,0,0.11),
+      0 20px 46px  rgba(202, 202, 202, 0.48);
+    transform: translateY(-10px) scale(1.03);
+}
+
+
+/* overlay is first level */
+.overlay{
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    background-color:var(--yellow);
+    z-index: 0;
+    transition: transform 0.3s ease-out;
+    position: absolute;
+    transform: translateY(-20px);
+}
+
+.card_container:hover .overlay{
+    transform: scale(4);
+}
+
+/* circle is 2nd level */
+
+.circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    transition: all 0.3s ease-out;
+    transform: translateY(-20px);
+  }
+
+
+  /* third level */
+  
+  .circle:after {
+    content: "";
+    width: 115px;
+    height: 115px;
+    display: block;
+    position: absolute;
+    background: var(--yellow);
+    border-radius: 50%;
+    transition: all 0.3s ease-out;
+  }
+
+.card_container:hover .circle{
+    border-color: var(--white);
+    background-color: var(--yellow);
+}
+
+.card_container:hover .circle::after{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.card_container:hover .img{
+    z-index: 3;
+}
+
+.img{
+    z-index: 3;
+    height: 100px;
+    width: 100px;
+
+}
+.text{
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+p{
+    align-self: flex-end;
+    transform: translateY(15px);
+    z-index: 1;
+    transition: transform .3s ease-out;
+}
+
+.card_container:hover p{
+    transform: translateY(-5px);
+}
+.go_link{
+    opacity: 0;
+    text-decoration: none;
+    background-color: rgb(252, 164, 0);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 20px 5px 20px;
+    border:2px solid rgb(255, 255, 255);
+    transform: translateY(30px);
+}
+
+.card_container:hover .go_link{
+    opacity: 1;
+    z-index: 99;
+    transform: translateY(-10px);
+    transition-property: transform;
+    transition-duration: .3s;
+}
+
+

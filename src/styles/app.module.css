@@ -1,0 +1,6 @@
+.app{
+/* background-color: tomato; */
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
