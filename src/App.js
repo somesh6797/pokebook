@@ -12,7 +12,18 @@ function App() {
         <IceCreamContainer/>
         <CakeContainer />
       </Provider>
-      {/* <Pokecard pokename="Name's somethinga-saur" /> */}
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
+      <Pokecard pokename="Name's somethinga-saur" />
     </div>
   );
 }

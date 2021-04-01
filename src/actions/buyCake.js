@@ -9,4 +9,4 @@ const buyCake = () => {
 export default buyCake
 
 
-//function that returns object havig type peroperty
+//function that returns object havig type peroperty and having payload i.e. the another data

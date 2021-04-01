@@ -1,2 +1,5 @@
 export const BUY_CAKE = "BUY_CAKE"
-export const  BUY_ICECREAM="BUY_ICECREAM"
+export const BUY_ICECREAM = "BUY_ICECREAM"
+export const FETCH_REQUEST = "FETCH_REQUEST"
+export const FETCH_SUCCESS = "FETCH_SUCCESS"
+export const FETCH_ERROR="FETCH_ERROR"

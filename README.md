@@ -16,3 +16,6 @@ some words related to projects
 badge
 pokecard--> image and name of 1 pokemon
 pokechart---> whole info about one pokemon
+
+
+again all card have the same background color trying to apply different background colors

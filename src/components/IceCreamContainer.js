@@ -13,13 +13,14 @@ function IceCreamContainer(props) {
 
 
 //here iceCream property is beacause we have given it in root reducer
-const mapStateToProps = (state) => {
+//we can do somesthing based on ownPorps
+const mapStateToProps = (state, ownProps) => {
     return {
         numOfIceCream:state.iceCream.numOfIceCream
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         buyIceCream: () => dispatch(buyIceCream())
     }

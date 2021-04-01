@@ -3,7 +3,6 @@ import buyCake from './../actions/buyCake'
 import {connect} from 'react-redux'
 
 class CakeContainer extends Component {
-    
     render() {
         console.log(this.props);
         return (
@@ -21,6 +20,7 @@ const mapStateToProps = state => {
         numOfCakes:state.cake.numOfCakes
     }
 }
+
 const mapDispatchToProps = dispatch => {
     return {
         buyCake:()=>dispatch(buyCake())
