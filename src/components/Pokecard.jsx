@@ -8,7 +8,7 @@ class Pokecard extends Component{
                 <div className={style.card_container}>
                     <div className={style.overlay}></div>
                     <div className={style.circle}>
-                        <img style={this.img} className={style.img} src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg' height='90' alt="hi"/>
+                        <img style={this.img} className={style.img} src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/58.svg' height='90' alt="hi"/>
                     </div>
                     <div className={ style.text}>
                         <p> {this.props.pokename}</p>

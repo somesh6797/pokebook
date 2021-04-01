@@ -7,3 +7,6 @@ const buyCake = () => {
 }
 
 export default buyCake
+
+
+//function that returns object havig type peroperty
