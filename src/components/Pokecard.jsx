@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import style from './../styles/pokecard.module.css'
+import fetchData from './../actions/fetchData'
+import {connect} from 'react-redux'
 
+let dataFun;
 class Pokecard extends Component{
+    // componentDidMount() {
+    //     // this.props.fetchData();
+    // }
     render() {
         return (
             <React.Fragment>
@@ -20,5 +26,18 @@ class Pokecard extends Component{
     }
 }
 
+// const mapStateToProps = state=> {
+//     return {
+//         data:state
+//     }
+// }
 
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         fetchData: () => {
+//             dispatch(fetchData())
+//         }
+//     }
+// }
+// export default connect(mapStateToProps,mapDispatchToProps)(Pokecard)
 export default Pokecard

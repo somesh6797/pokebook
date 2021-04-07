@@ -1,8 +1,9 @@
 import { FETCH_SUCCESS } from "../constants/constants"
 
-const fetchSuccess = () => {
+const fetchSuccess = (payload) => {
     return {
-        type: FETCH_SUCCESS
+        type: FETCH_SUCCESS,
+        payload
     }
 }
 

@@ -8,21 +8,10 @@ import IceCreamContainer from "./components/IceCreamContainer";
 function App() {
   return (
     <div className={style.app}>
-      <Provider store={store}>
+      {/* <Provider store={store}>
         <IceCreamContainer/>
         <CakeContainer />
-      </Provider>
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
-      <Pokecard pokename="Name's somethinga-saur" />
+      </Provider> */}
       <Pokecard pokename="Name's somethinga-saur" />
     </div>
   );

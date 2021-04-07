@@ -14,7 +14,18 @@ const dataReducer = (state = initialState, action) => {
                 loading:true
             }
         case FETCH_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                data:action.payload
+            }
         case FETCH_ERROR:
+            return{
+            ...state,
+            loading: false,
+            error:action.payload
+            }
+        default: return state
     }
 }
 
