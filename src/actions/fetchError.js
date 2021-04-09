@@ -1,8 +1,9 @@
 import { FETCH_ERROR } from "../constants/constants"
 
-const fetchError = () => {
+const fetchError = (payload) => {
     return {
-        type:FETCH_ERROR
+        type: FETCH_ERROR,
+        payload:payload
     }
 }
 
