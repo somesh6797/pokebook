@@ -1,9 +1,9 @@
 import { FETCH_ERROR, FETCH_REQUEST, FETCH_SUCCESS } from "../constants/constants"
 
 const initialState = {
-    loading: false,
-    pokedata: [],
-    error:""
+    dataLoading: true,
+    pokedata: {},
+    dataError:""
 }
 
 const dataReducer = (state = initialState, action) => {
@@ -11,19 +11,19 @@ const dataReducer = (state = initialState, action) => {
         case FETCH_REQUEST:
             return {
                 ...state,
-                loading:true
+                dataLoading:true
             }
         case FETCH_SUCCESS:
             return {
                 ...state,
-                loading: false,
+                dataLoading: false,
                 pokedata:action.payload
             }
         case FETCH_ERROR:
             return{
             ...state,
-            loading: false,
-            error:action.payload
+            dataLoading: false,
+            dataError:action.payload
             }
         default: return state
     }

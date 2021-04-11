@@ -84,14 +84,18 @@
 }
 
 .card_container:hover .img{
-    z-index: 3;
+    color: rgb(61, 59, 59);
 }
 
 .img{
+    color: #00355e;
     z-index: 3;
     height: 100px;
     width: 100px;
-
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: Poppins,sans-serif;
 }
 .text{
     align-self: flex-end;

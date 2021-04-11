@@ -5,6 +5,7 @@ import fetchSuccess from './fetchSuccess'
 import fetchError from './fetchError'
 
 
+
 //This function uses middleware
 //in dispatch call we can have a action creator name 
 //or we can call it if it has any arguments
@@ -17,9 +18,10 @@ import fetchError from './fetchError'
 const fetchData = () => {
     return (dispatch) => {
         dispatch(fetchRequest());
-        axios.get('https://pokeapi.co/api/v2/pokemon/1/')
+        axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10')
             .then(responce => {
                 dispatch(fetchSuccess(responce.data))
+                // console.log(responce.data.results)
             })
             .catch(error => {
                 dispatch(fetchError(error.message))
@@ -27,3 +29,19 @@ const fetchData = () => {
     }
 }
 export default fetchData;
+
+
+
+// const fetchData = () => {
+//     return (dispatch) => {
+//         dispatch(fetchRequest());
+//         axios.get('https://pokeapi.co/api/v2/pokemon/1/')
+//             .then(responce => {
+//                 dispatch(fetchSuccess(responce.data))
+//             })
+//             .catch(error => {
+//                 dispatch(fetchError(error.message))
+//             })
+//     }
+// }
+// export default fetchData;

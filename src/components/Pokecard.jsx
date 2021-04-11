@@ -1,28 +1,46 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import fetchImage from '../actions/fetchImage'
 import style from './../styles/pokecard.module.css'
 
-class Pokecard extends Component{
+///Because of props laziness last images are rendering for all
 
+class Pokecard extends Component{
+    componentDidMount = () => {
+        this.props.fetchImage(this.props.index+1);
+        console.log(this.props.image.imageData,"from pokecard")
+    }
     render() {
-        let { loading, pokedata, error } = this.props.pokemon
-        console.log(this.props,"from pokemons")
+        let image = ""
         let name=""
-        if (loading) {
-            name="loading..."
+        let { dataLoading, pokename, dataError } = this.props.pokemon
+        let { imageLoading, imageError, imageData } = this.props.image
+        if (dataLoading) {
+            name="loading... data"
         } else {
-            if (!error==="") {
-                name=error
+            if (!dataError==="") {
+                name=dataError
             }else {
-                name = pokedata.name
+                name = pokename
             }
         }
-        let imageUrl='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/'+1+'.svg'
+
+        if (imageLoading) {
+            imageData="loading image..."
+        } else {
+            if (!imageError==="") {
+                imageData=dataError
+            } else {
+                image = imageData
+            }
+        }
+        // console.log(image)
         return (
             <React.Fragment>
                 <div className={style.card_container}>
                     <div className={style.overlay}></div>
                     <div className={style.circle}>
-                        <img style={this.img} className={style.img} src={imageUrl} height='90' alt="hi"/>
+                        <img className={style.img} src={`data:image/svg+xml;utf8,${encodeURIComponent(image)}`} alt="hi" />
                     </div>
                     <div className={style.text}>
                         <p> {name}</p>
@@ -34,4 +52,15 @@ class Pokecard extends Component{
     }
 }
 
-export default Pokecard
+const mapState = (state) => {
+    return {
+        image : state.pokeImage
+    }
+}
+
+const mapDispatch = (dispatch) => {
+    return {
+        fetchImage: (pokenum) => {dispatch(fetchImage(pokenum))}
+    }
+}
+export default connect(mapState, mapDispatch)(Pokecard);
